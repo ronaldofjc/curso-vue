@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <app-navigation/>
+    <Navigation/>
 
-    <app-toolbar/>
+    <Toolbar/>
 
-    <app-content/>
+    <Content/>
 
-    <app-footer/>
+    <Footer/>
   </v-app>
 </template>
 
@@ -18,10 +18,10 @@ import Footer from "./components/template/Footer.vue";
 
 export default {
   components: {
-    "app-navigation": Navigation,
-    "app-toolbar": Toolbar,
-    "app-content": Content,
-    "app-footer": Footer
+    Navigation,
+    Toolbar,
+    Content,
+    Footer
   }
 };
 </script>
