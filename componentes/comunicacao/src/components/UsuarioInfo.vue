@@ -4,8 +4,9 @@
     <p>Vários detalhes...</p>
     <p>
       Nome do Usuário:
-      <strong>{{ nome }}</strong>
+      <strong>{{ inverterNome() }}</strong>
     </p>
+    <button @click="reiniciarNome">Reiniciar Nome</button>
   </div>
 </template>
 
@@ -16,6 +17,18 @@ export default {
       type: String,
       // required: true,
       default: "Anônimo"
+    }
+  },
+  methods: {
+    inverterNome() {
+      return this.nome
+        .split("")
+        .reverse()
+        .join("");
+    },
+    reiniciarNome() {
+      this.nome === "Ana" ? (this.nome = "Pedro") : (this.nome = "Ana");
+      this.$emit("nomeMudou", this.nome);
     }
   }
 };
