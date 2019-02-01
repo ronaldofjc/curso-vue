@@ -6,6 +6,7 @@
       type="text"
       class="form-element"
       placeholder="Nova Tarefa?"
+      autofocus="true"
     >
     <button @click="add" class="form-element">+</button>
   </div>
