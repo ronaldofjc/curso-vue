@@ -32,9 +32,10 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
   height: 100vh;
+  margin-top: 50px;
 }
 
 #app h1 {
