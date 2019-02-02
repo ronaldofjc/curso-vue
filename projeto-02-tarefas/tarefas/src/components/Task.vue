@@ -26,10 +26,10 @@ export default {
   position: relative;
   box-sizing: border-box;
   width: 250px;
-  height: 100px;
+  height: 150px;
   padding: 10px;
   border-radius: 8px;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: 300;
   cursor: pointer;
   user-select: none;

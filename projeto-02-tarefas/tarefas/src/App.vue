@@ -41,7 +41,10 @@ export default {
       if (reallyNew) {
         this.tasks.push({
           name: task.name,
-          pending: task.pending || true
+          pending: task.pending || true,
+          date: new Date().toLocaleString("pt-BR", {
+            timeZone: "America/Sao_Paulo"
+          })
         });
       }
     },
