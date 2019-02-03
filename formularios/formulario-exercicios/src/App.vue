@@ -14,7 +14,7 @@
           <input type="number" v-model.number="usuario.idade">
         </Rotulo>
         <Rotulo nome="Mensagem">
-          <textarea name cols="30" rows="5"></textarea>
+          <textarea name cols="30" rows="5" v-model="mensagem"></textarea>
         </Rotulo>
         <Rotulo nome="Características do Problema">
           <span class="mr-4">
@@ -55,10 +55,10 @@
           <span>{{ usuario.senha }}</span>
         </Rotulo>
         <Rotulo nome="Idade">
-          <span>{{ usuario.idade }}{{ tipoIdade }}</span>
+          <span>{{ usuario.idade }}</span>
         </Rotulo>
         <Rotulo nome="Mensagem">
-          <span>???</span>
+          <span style="white-space: pre">{{ mensagem }}</span>
         </Rotulo>
         <Rotulo nome="Marque as Opções">
           <span>???</span>
@@ -84,13 +84,9 @@ import Escolha from "./components/Escolha.vue";
 export default {
   name: "app",
   components: { Rotulo, Escolha },
-  computed: {
-    tipoIdade() {
-      return typeof this.usuario.idade;
-    }
-  },
   data() {
     return {
+      mensagem: "",
       usuario: {
         email: "",
         senha: "",
