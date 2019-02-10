@@ -7,7 +7,7 @@
       <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
     </transition>
     <transition name="slide" type="animation">
-      <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
+      <b-alert variant="info" show v-show="exibir">{{ msg }}</b-alert>
     </transition>
   </div>
 </template>
