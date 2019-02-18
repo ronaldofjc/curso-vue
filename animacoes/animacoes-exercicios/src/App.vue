@@ -27,27 +27,36 @@
       :css="false"
       @before-enter="beforeEnter"
       @enter="enter"
-      @after-enter="afterEnter"
-      @enter-cancelled="enterCancelled"
       @before-leave="beforeLeave"
       @leave="leave"
-      @after-leave="afterLeave"
-      @leaveCancelled="leaveCancelled"
     >
       <div v-if="exibir2" class="caixa"></div>
+    </transition>
+    <hr>
+    <div class="mb-4">
+      <b-button variant="primary" @click="componenteSelecionado = 'AlertaInfo'" class="mr-2">Info</b-button>
+      <b-button variant="secondary" @click="componenteSelecionado = 'AlertaAdvertencia'">Advertência</b-button>
+    </div>
+    <transition name="fade" mode="out-in">
+      <component :is="componenteSelecionado"></component>
     </transition>
   </div>
 </template>
 
 <script>
+import AlertaAdvertencia from "./AlertaAdvertencia.vue";
+import AlertaInfo from "./AlertaInfo.vue";
+
 export default {
+  components: { AlertaAdvertencia, AlertaInfo },
   data() {
     return {
       msg: "Uma mensagem de informação para o usuário!",
       exibir: false,
       exibir2: true,
       tipoAnimacao: "fade",
-      larguraBase: 0
+      larguraBase: 0,
+      componenteSelecionado: "AlertaInfo"
     };
   },
   methods: {
