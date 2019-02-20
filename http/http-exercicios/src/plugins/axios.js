@@ -15,12 +15,12 @@ Vue.use({
 		}, error => Promise.reject(error))
 
 		Vue.prototype.$http.interceptors.response.use(res => {
-			const array = []
+			/*const array = []
 			for(let chave in res.data) {
 				array.push({ id: chave, ...res.data[chave] })
 			}
 
-			res.data = array
+			res.data = array*/
 			return res
 		}, error => Promise.reject(error))
 	}
