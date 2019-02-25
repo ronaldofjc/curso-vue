@@ -9,7 +9,8 @@
 
 <script>
 export default {
-  data() {
+  props: ['id'],
+  /*data() {
     return {
       id: this.$route.params.id
     }
@@ -18,7 +19,7 @@ export default {
     $route(to, from) {
       this.id = to.params.id
     }
-  },
+  },*/
   methods: {
     irParaInicio() {
       this.$router.push('/')
