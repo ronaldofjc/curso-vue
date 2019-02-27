@@ -12,7 +12,8 @@ export default new Router({
   mode:'history',
   routes: [{
     path: '/',
-    component: Inicio
+    component: Inicio,
+    name: 'inicio'
   }, {
     path: '/usuario',
     component: Usuario,
@@ -20,7 +21,7 @@ export default new Router({
     children: [
       { path: '', component: UsuarioLista },
       { path: ':id', component: UsuarioDetalhe, props: true },
-      { path: ':id/editar', component: UsuarioEditar, props: true }
+      { path: ':id/editar', component: UsuarioEditar, props: true, name: 'editarUsuario' }
     ]
   }]
 })
